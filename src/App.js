@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState, useEffect } from "react";
 
-function App() {
+// const Person = (props) => {
+//   return (
+//     <>
+//       <div>
+//         <h1>Hello World</h1>
+//         <h1>This person is {props.name}</h1>
+//       </div>
+//     </>
+//   );
+// };
+
+const APP = () => {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    setCount(count + 1);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+          Click Me
+        </button>
+        <h1>Count: {count}</h1>
+        <button onClick={() => setCount((prevCount) => prevCount - 1)}>
+          Click Me
+        </button>
+      </div>
+    </>
   );
-}
+};
 
-export default App;
+export default APP;
