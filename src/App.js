@@ -1,32 +1,22 @@
 import React from "react";
 import { useState, useEffect } from "react";
+const api_key = "c3672265";
 
-// const Person = (props) => {
-//   return (
-//     <>
-//       <div>
-//         <h1>Hello World</h1>
-//         <h1>This person is {props.name}</h1>
-//       </div>
-//     </>
-//   );
-// };
+const API_URL = `https://www.omdbapi.com/?apikey=${api_key}&s=`;
 
 const APP = () => {
-  const [count, setCount] = useState(0);
+  const searchMovies = async (title) => {
+    const response = await fetch(`${API_URL}${title}`);
+    const data = await response.json();
+    console.log(data);
+  };
   useEffect(() => {
-    setCount(count + 1);
+    searchMovies("superman");
   }, []);
   return (
     <>
       <div>
-        <button onClick={() => setCount((prevCount) => prevCount + 1)}>
-          Click Me
-        </button>
-        <h1>Count: {count}</h1>
-        <button onClick={() => setCount((prevCount) => prevCount - 1)}>
-          Click Me
-        </button>
+        <h1>React App</h1>
       </div>
     </>
   );
