@@ -31,6 +31,9 @@ const APP = () => {
   // movies state
   const [movies, setMovies] = useState([]);
 
+  // loading state
+  const [isLoading, setIsLoading] = useState(false);
+
   // function to search for movies
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}${title}`);
@@ -42,6 +45,7 @@ const APP = () => {
   // useEffect hook to fetch movies on component mount
   useEffect(() => {
     const fetchMovies = async () => {
+      setIsLoading(true);
       // create an array of promises to fetch movie data for each title
       const promises = movieTitles.map((title) =>
         fetch(`${API_URL}${title}`).then((response) => response.json())
@@ -58,6 +62,7 @@ const APP = () => {
 
       // shuffle the movie data and update state
       setMovies(shuffleArray(movies));
+      setIsLoading(false);
     };
 
     fetchMovies();
@@ -81,11 +86,14 @@ const APP = () => {
             onClick={() => searchMovies(searchValue)}
           ></img>
         </div>
-        {movies?.length > 0 ? (
+        {isLoading ? (
+          <div className="loader">
+            <div className="spinner"></div>
+          </div>
+        ) : movies?.length > 0 ? (
           <div className="container">
-            {/* For each movie in the movies array, render a MovieCard component */}
             {movies.map((movie) => {
-              return <MovieCard movie={movie} />;
+              return <MovieCard movie={movie} key={movie.imdbID} />;
             })}
           </div>
         ) : (
