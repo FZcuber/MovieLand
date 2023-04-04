@@ -1,32 +1,12 @@
 {
   "movies": [
     "Jurassic Park",
-    "Forrest Gump",
     "Back to the Future",
     "Indiana Jones",
-    "The Shawshank Redemption",
     "The Lord of the Rings",
     "The Matrix",
-    "Terminator 2: Judgment Day",
-    "The Lion King",
-    "The Silence of the Lambs",
-    "Goodfellas",
-    "Braveheart",
-    "Gladiator",
-    "Blade Runner 2049",
-    "Mad Max: Fury Road",
-    "Logan",
-    "Deadpool",
-    "Frozen",
-    "Moana",
-    "Zootopia",
-    "Kung Fu Panda",
-    "The Incredibles",
-    "Finding Nemo",
-    "Up",
-    "Inside Out",
-    "Wall-E",
-    "Coco",
-    "Soul"
+    "Batman",
+    "The Dark Knight",
+    "The Avengers"
   ]
 }
