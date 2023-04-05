@@ -4,9 +4,14 @@ A React application that allows users to search for movies and displays them in 
 
 ## Table of Contents
 
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
+
+## Demo
+
+To view a live demo of the application, simply go to [link](https://fzcuber.github.io/MovieLand/)
 
 ## Installation
 
